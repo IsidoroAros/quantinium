@@ -9,34 +9,47 @@ import { Metrics } from '@/components/metrics/metrics';
  */
 export function Home() {
   return (
-    <main className="flex-1 w-full min-h-screen bg-background">
-      <div className="w-full h-auto relative">
+    <main className="relative w-full min-h-screen flex flex-col bg-background">
+      {/* Video Container */}
+      <div className="absolute top-0 left-0 w-full min-h-screen overflow-hidden z-0">
         <div className="absolute inset-0 bg-gradient-to-t from-background to-transparent z-10" />
-        <video className="w-full h-auto" autoPlay muted loop playsInline>
+        <video
+          className="absolute top-0 left-0 w-full h-full object-cover z-0"
+          autoPlay
+          muted
+          loop
+          playsInline
+        >
           <source src="../../public/video/landing.mp4" type="video/mp4" />
         </video>
       </div>
 
-      <div className=" mx-auto px-4 py-12 space-y-12 absolute top-20 left-0 right-0 bottom-0 z-10">
-        <div className="mx-auto text-center space-y-6 max-w-[1240px]">
-          <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-white">
-            Welcome to Quantinium
-          </h1>
-          <p className="text-md leading-8 text-muted-foreground max-w-2xl mx-auto">
-            A groundbreaking institutional-grade blockchain infrastructure that
-            establishes a new industry standard for speed, security, and
-            reliability. The first and only platform to seamlessly integrate
-            decentralization, scalability, sustainability, and cybersecurity.
-          </p>
-        </div>
+      {/* Content Container */}
+      <div className="relative top-20 flex-1 w-full max-w-[1240px] mx-auto px-4 py-12">
+        <div className="space-y-12">
+          {/* Hero Section */}
+          <div className="mx-auto text-center space-y-6">
+            <h1 className="text-3xl md:text-4xl lg:text-6xl font-bold tracking-tight text-white">
+              Welcome to Quantinium
+            </h1>
+            <p className="text-sm md:text-md leading-6 md:leading-8 text-muted-foreground max-w-2xl mx-auto">
+              A groundbreaking institutional-grade blockchain infrastructure
+              that establishes a new industry standard for speed, security, and
+              reliability. The first and only platform to seamlessly integrate
+              decentralization, scalability, sustainability, and cybersecurity.
+            </p>
+          </div>
 
-        <div className="w-full max-w-[1240px] mx-auto">
-          <Metrics />
-        </div>
+          {/* Metrics Section */}
+          <div className="w-full">
+            <Metrics />
+          </div>
 
-        <div className="w-full overflow-hidden">
-          <InfiniteMarquee />
+          {/* Marquee Section */}
         </div>
+      </div>
+      <div className="w-full my-20">
+        <InfiniteMarquee />
       </div>
     </main>
   );

@@ -117,7 +117,6 @@ export function SignTransaction() {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 placeholder="Enter a message to sign"
-                disabled
               />
             </div>
 
