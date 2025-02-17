@@ -5,7 +5,7 @@ import { getExplorerUrl } from '@/lib/utils/explorer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Wallet, AlertCircle, ExternalLink, Send, AtSign } from 'lucide-react';
+import { Wallet, AlertCircle, Send } from 'lucide-react';
 
 export function SignTransaction() {
   const {

@@ -30,7 +30,9 @@ export function Home() {
           </p>
         </div>
 
-        <Metrics />
+        <div className="w-full max-w-[1240px] mx-auto">
+          <Metrics />
+        </div>
 
         <div className="w-full overflow-hidden">
           <InfiniteMarquee />
