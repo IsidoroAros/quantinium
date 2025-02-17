@@ -62,23 +62,23 @@ export function SignTransaction() {
    *
    * @returns {Promise<void>} A promise that resolves when the transaction is sent
    */
-  const handleSendTransaction = async () => {
-    if (!address) return;
+  // const handleSendTransaction = async () => {
+  //   if (!address) return;
 
-    try {
-      setError(null);
-      setIsLoading(true);
-      const tx = await sendTransaction(address, '0.001');
-      setSignature(tx.hash);
-    } catch (err) {
-      setError(
-        err instanceof Error ? err.message : 'Failed to send transaction',
-      );
-      console.error('Failed to send transaction:', err);
-    } finally {
-      setIsLoading(false);
-    }
-  };
+  //   try {
+  //     setError(null);
+  //     setIsLoading(true);
+  //     const tx = await sendTransaction(address, '0.001');
+  //     setSignature(tx.hash);
+  //   } catch (err) {
+  //     setError(
+  //       err instanceof Error ? err.message : 'Failed to send transaction',
+  //     );
+  //     console.error('Failed to send transaction:', err);
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
 
   if (!address) {
     return (
@@ -130,7 +130,7 @@ export function SignTransaction() {
             <div className="flex gap-4">
               <Button
                 onClick={handleSignMessage}
-                disabled={isLoading}
+                disabled={isLoading || message.length === 0}
                 className="flex-1"
               >
                 {isLoading ? (
