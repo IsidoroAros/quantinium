@@ -22,11 +22,17 @@ interface NetworkConfig {
  */
 const NETWORKS: { [key: string]: NetworkConfig } = {
   AVALANCHE_TESTNET: {
-    chainId: '0xa869', // 43113 en decimal
-    chainName: 'Avalanche Fuji Testnet', // Nombre exacto que usa Avalanche
-    symbol: 'AVAX',
-    rpcUrl: 'https://api.avax-test.network/ext/bc/C/rpc',
-    blockExplorerUrl: 'https://testnet.snowtrace.io',
+    // chainId: '0xa869', // 43113 en decimal
+    // chainName: 'Avalanche Fuji Testnet', // Nombre exacto que usa Avalanche
+    // symbol: 'AVAX',
+    // rpcUrl: 'https://api.avax-test.network/ext/bc/C/rpc',
+    // blockExplorerUrl: 'https://testnet.snowtrace.io',
+    chainId: import.meta.env.VITE_AVAX_TESTNET_CHAIN_ID || '',
+    chainName: import.meta.env.VITE_AVAX_TESTNET_CHAIN_NAME || '',
+    symbol: import.meta.env.VITE_AVAX_TESTNET_SYMBOL || '',
+    rpcUrl: import.meta.env.VITE_AVAX_TESTNET_RPC_URL || '',
+    blockExplorerUrl:
+      import.meta.env.VITE_AVAX_TESTNET_BLOCK_EXPLORER_URL || '',
   },
 };
 

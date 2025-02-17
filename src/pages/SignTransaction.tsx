@@ -16,6 +16,7 @@ export function SignTransaction() {
     signMessage,
     sendTransaction,
   } = useWeb3();
+
   const {
     message,
     signature,
@@ -32,6 +33,13 @@ export function SignTransaction() {
     return () => reset();
   }, [reset]);
 
+  /**
+   * Handles the signing of a message using the connected wallet.
+   * Sets loading state while signing, updates the signature on success,
+   * and handles any errors that occur during the process.
+   *
+   * @returns {Promise<void>} A promise that resolves when the signing is complete
+   */
   const handleSignMessage = async () => {
     try {
       setError(null);
@@ -46,6 +54,14 @@ export function SignTransaction() {
     }
   };
 
+  /**
+   * Handles sending a transaction using the connected wallet.
+   * Sends 0.001 native tokens to the connected address.
+   * Sets loading state during the transaction, updates the signature with the transaction hash on success,
+   * and handles any errors that occur during the process.
+   *
+   * @returns {Promise<void>} A promise that resolves when the transaction is sent
+   */
   const handleSendTransaction = async () => {
     if (!address) return;
 

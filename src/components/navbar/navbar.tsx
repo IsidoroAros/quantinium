@@ -27,6 +27,8 @@ export function Navbar() {
 
   const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
+  console.log('isOpen', isMenuOpen);
+
   // Monitor wallet changes
   useEffect(() => {
     if (previousAddress !== address) {
@@ -39,7 +41,7 @@ export function Navbar() {
   }, [address, previousAddress, navigate]);
 
   return (
-    <nav className="border-b w-full">
+    <nav className="border-b w-full z-20">
       <div className="flex h-16 items-center px-4 max-w-[1240px] mx-auto">
         <div className="flex items-center space-x-2">
           <Link to="/" className="flex items-center space-x-2">
@@ -87,13 +89,16 @@ export function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden"
+            className="md:hidden text-white flex items-center justify-center p-0"
             onClick={toggleMenu}
           >
             {isMenuOpen ? (
               <X className="h-6 w-6 text-white fill-white" fill="white" />
             ) : (
-              <Menu className="h-6 w-6 text-white fill-white" fill="white" />
+              <Menu
+                className="h-6 w-6 text-white fill-white z-30"
+                fill="white"
+              />
             )}
           </Button>
         </div>

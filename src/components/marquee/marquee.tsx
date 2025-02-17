@@ -9,19 +9,19 @@ interface MarqueeItem {
 /**
  * Double infinite marquee component that displays scrolling text in opposite directions.
  * Creates a dynamic, continuous scrolling effect with hover pause.
- * 
+ *
  * @returns {JSX.Element} The rendered marquee component
  */
 export function InfiniteMarquee() {
   const items: MarqueeItem[] = [
-    { id: 1, text: "Groundbreaking Blockchain Infrastructure" },
-    { id: 2, text: "Industry-Leading Speed" },
-    { id: 3, text: "Unmatched Security" },
-    { id: 4, text: "Enterprise-Grade Reliability" },
-    { id: 5, text: "True Decentralization" },
-    { id: 6, text: "Infinite Scalability" },
-    { id: 7, text: "Sustainable Architecture" },
-    { id: 8, text: "Advanced Cybersecurity" },
+    { id: 1, text: 'Groundbreaking Blockchain Infrastructure' },
+    { id: 2, text: 'Industry-Leading Speed' },
+    { id: 3, text: 'Unmatched Security' },
+    { id: 4, text: 'Enterprise-Grade Reliability' },
+    { id: 5, text: 'True Decentralization' },
+    { id: 6, text: 'Infinite Scalability' },
+    { id: 7, text: 'Sustainable Architecture' },
+    { id: 8, text: 'Advanced Cybersecurity' },
   ];
 
   // Double the items to ensure smooth infinite scroll
