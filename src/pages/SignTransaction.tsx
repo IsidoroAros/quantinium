@@ -5,7 +5,7 @@ import { getExplorerUrl } from '@/lib/utils/explorer';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Card } from '@/components/ui/card';
-import { Wallet, AlertCircle, ExternalLink, Send } from 'lucide-react';
+import { Wallet, AlertCircle, ExternalLink, Send, AtSign } from 'lucide-react';
 
 export function SignTransaction() {
   const {
@@ -134,10 +134,15 @@ export function SignTransaction() {
                 disabled={isLoading}
                 className="flex-1"
               >
+                {isLoading ? (
+                  <></>
+                ) : (
+                  <Send color="#0b0b0b" className="w-4 h-4 mr-1" />
+                )}
                 {isLoading ? 'Signing...' : 'Sign Message'}
               </Button>
 
-              <Button
+              {/* <Button
                 onClick={handleSendTransaction}
                 disabled={true}
                 className="flex-1"
@@ -145,7 +150,7 @@ export function SignTransaction() {
               >
                 <Send className="w-4 h-4 mr-2" />
                 {isLoading ? 'Sending...' : 'Send Transaction'}
-              </Button>
+              </Button> */}
             </div>
 
             {signature && (
