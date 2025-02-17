@@ -1,4 +1,4 @@
-import { Activity, Shield, Zap, Scale } from 'lucide-react';
+import { Activity, Shield, Zap, Satellite } from 'lucide-react';
 import gsap from 'gsap';
 /**
  * Interface for metric data
@@ -36,7 +36,7 @@ export function Metrics() {
       value: 'LoRaWAN',
     },
     {
-      icon: <Scale className="w-5 h-5 text-orange-500" />,
+      icon: <Satellite className="w-5 h-5 text-orange-500" />,
       label:
         'Global connectivity through blockchain-optimized satellite networks with faster transmission and lower costs.',
       value: 'Satellite',

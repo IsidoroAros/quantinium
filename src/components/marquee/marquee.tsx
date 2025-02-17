@@ -35,7 +35,7 @@ export function InfiniteMarquee() {
           {doubledItems.map((item, idx) => (
             <span
               key={`${item.id}-${idx}`}
-              className="text-lg font-medium px-6 py-2 bg-zinc-800 mx-2"
+              className="text-lg font-medium px-6 py-2 bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 mx-2 rounded-md"
             >
               {item.text}
             </span>
@@ -44,8 +44,8 @@ export function InfiniteMarquee() {
         <div className="absolute top-0 animate-marquee2 group-hover:pause-animation flex whitespace-nowrap">
           {doubledItems.map((item, idx) => (
             <span
-              key={`${item.id}-${idx}-clone`}
-              className="text-lg font-medium px-6 py-2 bg-zinc-800 mx-2"
+              key={`${item.id}-${idx}-clone}`}
+              className="text-lg font-medium px-6 py-2 bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 mx-2 rounded-md"
             >
               {item.text}
             </span>
@@ -59,7 +59,7 @@ export function InfiniteMarquee() {
           {[...doubledItems].reverse().map((item, idx) => (
             <span
               key={`${item.id}-${idx}-reverse`}
-              className="text-lg font-medium px-6 py-2 bg-zinc-800 mx-2"
+              className="text-lg font-medium px-6 py-2 bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 mx-2 rounded-md"
             >
               {item.text}
             </span>
@@ -69,7 +69,7 @@ export function InfiniteMarquee() {
           {[...doubledItems].reverse().map((item, idx) => (
             <span
               key={`${item.id}-${idx}-reverse-clone`}
-              className="text-lg font-medium px-6 py-2 bg-zinc-800 mx-2"
+              className="text-lg font-medium px-6 py-2 bg-zinc-900/40 backdrop-blur-sm border border-zinc-800/50 mx-2 rounded-md"
             >
               {item.text}
             </span>
