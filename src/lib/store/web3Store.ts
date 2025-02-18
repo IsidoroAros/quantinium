@@ -212,8 +212,25 @@ export const useWeb3Store = create<Web3State>((set, get) => {
       try {
         return await signer.signMessage(message);
       } catch (err) {
-        const error =
-          err instanceof Error ? err.message : 'Failed to sign message';
+        console.error('Error signing message:', err);
+
+        // Verify if the error is of type Error
+        if (err instanceof Error) {
+          // Verify different user rejection patterns
+          if (
+            err.message.includes('user rejected') ||
+            err.message.includes('User rejected') ||
+            err.message.includes('ethers-user-denied') ||
+            (err as unknown as { code?: number }).code === 4001
+          ) {
+            const userRejectedError = 'User rejected the message signing';
+            set({ error: userRejectedError });
+            throw new Error(userRejectedError);
+          }
+        }
+
+        // If it's not a user rejection error, throw a generic error
+        const error = 'Error signing message';
         set({ error });
         throw new Error(error);
       }
